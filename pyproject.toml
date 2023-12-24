@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plexdlnaserver"
+description = "A DLNA server for Plex"
+version = "0.1.0"
+authors = [
+    { name = "aubustou", email = "survivalfr@yahoo.fr" }
+]
+dependencies = [
+    "aiodns==3.0.0",
+    "aiohttp==3.7.4.post0",
+    "brotlipy==0.7.0",
+    "cchardet==2.1.7",
+    "dotmap==1.3.24",
+    "fastapi==0.68.0",
+    "httptools==0.2.0",
+    "Jinja2==3.0.1",
+    "pydantic==1.8.2",
+    "python-multipart==0.0.5",
+    "starlette==0.14.2",
+    "uvicorn==0.15.0",
+    "uvloop==0.16.0",
+    "xmltodict==0.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pdbpp",
+]
+
+[project.scripts]
+start-server = "plexdlnaserver.plex.plexserver:start_plex_server"
+
+[tool.setuptools]
+packages = ["plexdlnaserver"]
+
+[tool.autoflake]
+remove_all_unused_imports = true
+ignore_init_module_imports = true
+
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = 'black'
