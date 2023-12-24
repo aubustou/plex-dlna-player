@@ -11,7 +11,7 @@ authors = [
 ]
 dependencies = [
     "aiodns==3.0.0",
-    "aiohttp==3.7.4.post0",
+    "aiohttp==3.9.0",
     "brotlipy==0.7.0",
     "cchardet==2.1.7",
     "dotmap==1.3.24",
