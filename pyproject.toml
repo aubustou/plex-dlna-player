@@ -19,7 +19,7 @@ dependencies = [
     "httptools==0.2.0",
     "Jinja2==3.0.1",
     "pydantic==1.8.2",
-    "python-multipart==0.0.5",
+    "python-multipart==0.0.7",
     "starlette==0.14.2",
     "uvicorn==0.15.0",
     "uvloop==0.16.0",
